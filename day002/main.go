@@ -23,10 +23,36 @@ func main() {
 		// B = Paper
 		// C = Scissors
 
-		// X = Rock // Draw
-		// Y = Paper // Loose
+		// X = Rock // Loose
+		// Y = Paper // Draw
 		// Z = Scissors // Win
-		
+
+		if right == "X" {
+			if left == "A" {
+				right = "Z"
+			} else if left == "B" {
+				right = "X"
+			} else if left == "C" {
+				right = "Y"
+			}
+		} else if right == "Y" {
+			if left == "A" {
+				right = "X"
+			} else if left == "B" {
+				right = "Y"
+			} else if left == "C" {
+				right = "Z"
+			}
+		} else if right == "Z" {
+			if left == "A" {
+				right = "Y"
+			} else if left == "B" {
+				right = "Z"
+			} else if left == "C" {
+				right = "X"
+			}
+		}
+
 		// Win
 		if left == "A" && right == "Y" || left == "B" && right == "Z" || left == "C" && right == "X" {
 			score += 6
